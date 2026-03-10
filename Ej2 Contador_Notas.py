@@ -3,20 +3,14 @@ class Contador_Notas:
         self.__ruta = ruta
         self.cont = 0
 
-    def engadir_nota(self, texto):
-        if isinstance(texto, str):
-            with open(self.__ruta,'a') as notas:
-                notas.write(f"{texto}\n")
-
-    def leer_notas(self):
-        with open(self.__ruta, 'r') as notas:
-            print(notas.read())
 
     def contar_palabras(self,palabra):
         with open(self.__ruta, 'r') as notas:
             lineas = notas.readlines()
             for linea in lineas:
-                    if palabra in linea:
+                palabras_en_linea = linea.split()
+                for word in palabras_en_linea:
+                        if word==palabra:
                             self.cont += 1
             print(self.cont)
 
