@@ -1,4 +1,4 @@
-class Xestor_Notas:
+class Xestor_Tarefas:
     def __init__(self, ruta):
         self.__ruta = ruta
 
@@ -23,9 +23,10 @@ class Xestor_Notas:
         opcion = 999
         while opcion != 0:
             print("\n--- Xestion del almacén ---")
-            print("1. Engadir nota")
-            print("2. Leer notas")
-            print("3. Buscar notas por palabra clave")
+            print("1. Agregar unha nova tarefa")
+            print("2. Borrar unha tarefa")
+            print("3. Modificar unha tarefa")
+            print("4. Listar o listado de tarefas.")
             print("0. Salir")
             opcion = int(input("Elige una opción: "))
             if opcion == 1:
@@ -38,11 +39,20 @@ class Xestor_Notas:
                 opcion = str(input("Cual es la palabra clave: "))
                 self.buscar_clave(opcion)
                 print("Se ha guardado correctamente")
+            elif opcion == 4:
+                opcion = str(input("Cual es la palabra clave: "))
+                self.buscar_clave(opcion)
+                print("Se ha guardado correctamente")
             elif opcion == 0:
                 print("Saliendo del programa...")
             else:
                 print("Opción no válida.")
 
+
+
+
 if __name__ == "__main__":
-    xestor = Xestor_Notas('notas.txt')
-    xestor.menu()
+    xestor = Xestor_Tarefas('notas.txt')
+    # xestor.engadir_nota('Lore ipsum')
+    # xestor.leer_notas()
+    xestor.buscar_clave('Tercera')
