@@ -17,3 +17,4 @@ class Tarefa:
 
 
     def __str__(self):
+        return self.nome, self.data, self.hora,self.duración,self.descrición,self.estado
