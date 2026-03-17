@@ -68,7 +68,6 @@ class Xestor_Tarefas:
     def borrar_tarefa_por_nome(self):
         nome_a_borrar = input("Nombre de la tarea a borrar: ")
         original_len = len(self.listaTarefas)
-        self.listaTarefas = [t for t in self.listaTarefas if t.nome != nome_a_borrar]
 
         if len(self.listaTarefas) < original_len:
             print(f"Tarea '{nome_a_borrar}' eliminada de la sesión.")
